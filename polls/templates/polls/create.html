@@ -1,0 +1,8 @@
+<form action="{% url 'polls:create' %}" method="post">
+    {% csrf_token %}
+    <fieldset>
+        Write your question: <input type="text" name="question_text">
+    </fieldset>
+    <input type="submit" value="Create question">
+</form>
+

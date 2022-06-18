@@ -1,0 +1,21 @@
+<form action="{% url 'polls:addchoices' question.id %}" method="post">
+    {% csrf_token %}
+    <fieldset>
+        <legend><h1>{{ question.question_text }}</h1></legend>
+        <label>
+        Write choice: <input type="text" name="choice_text1">
+        </label>
+        <label>
+        Write choice: <input type="text" name="choice_text2">
+        </label>
+        <label>
+        Write choice: <input type="text" name="choice_text3">
+        </label>
+
+    </fieldset>
+    <input type="submit" value="Create choices">
+</form>
+
+<br>
+<a href="{% url 'polls:home' %}">Go home</a>
+

@@ -1,0 +1,10 @@
+<h1>Hello admin!</h1>
+
+<ul>
+{% for polluser in pollusers %}
+    <li>{{ polluser.username }} last logged in: {{ polluser.last_login }}</li> 
+{% endfor %}
+</ul>
+<a href="{% url 'polls:index' %}">See recent polls</a> 
+<br>
+<a href="{% url 'logout' %}">Log out</a>

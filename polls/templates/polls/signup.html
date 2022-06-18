@@ -1,0 +1,17 @@
+  <h2>Sign up</h2>
+  <form method="post">
+    <form method="post">
+    {% csrf_token %}
+    <p>Please fill in this form to create an account.</p>
+    <hr>
+
+    <label>Username:</label>
+    <input type="text" placeholder="Enter username" name="username" required>
+
+    <label>Password:</label>
+    <input type="password" placeholder="Enter Password" name="password" required>
+
+    <label>Repeat Password:</label>
+    <input type="password" placeholder="Repeat Password" name="password-repeat" required>
+    <button type="submit">Sign Up</button>
+  </form>

@@ -1,0 +1,18 @@
+
+<h1>Welcome to Securityrisks App</h1>
+
+{% if user.is_authenticated %}
+  <h2>Hi {{ user.username }}!</h2>
+  <ol>
+    <ol><a href="{% url 'polls:index' %}">See recent polls</a></ol>
+    <ol><a href="{% url 'polls:lastloggedin' user.id %}">See your last login</a></ol>
+    <ol><a href="{% url 'polls:create' %}">Create a new poll</a></ol>
+    <ol><a href="{% url 'logout' %}">Log out</a></ol>
+  </ol>
+  {% if user.is_superuser %}
+    <a href="{% url 'polls:pollusers' %}">See userlogins</a>
+  {% endif %}
+{% else %}
+  <p>You are not logged in</p>
+  <a href="{% url 'login' %}">Log In</a>
+{% endif %}
