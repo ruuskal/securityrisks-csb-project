@@ -108,7 +108,7 @@ def pollusers(request):
 
 def lastloggedin(request, polluser_id):
     if request.user.is_authenticated:
-        #polluser = request.user
-        polluser = User.objects.get(pk=polluser_id)
+        polluser = request.user
+        #polluser = User.objects.get(pk=polluser_id)
         return render(request, 'polls/lastloggedin.html', {'polluser':polluser})
     return render(request, 'polls/notloggedin.html', {'message': 'You are not logged in.'})
